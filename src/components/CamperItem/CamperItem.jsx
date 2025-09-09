@@ -4,6 +4,7 @@ import { addFavorite, deleteFavorite } from '../../redux/campers/slice.js';
 import css from './CamperItem.module.css';
 import { Icon } from '../Icons/Icons.jsx';
 import sprite from '../../shared/icons/sprite.svg';
+import { NavLink } from 'react-router-dom';
 
 export default function CamperItem({ data, onShowMore }) {
   const {
@@ -133,9 +134,9 @@ export default function CamperItem({ data, onShowMore }) {
             )}
           </ul>
         </div>
-        <button className={css.button} onClick={onShowMore}>
+        <NavLink to={`/catalog/${_id}`} className={css.showMoreBtn}>
           Show more
-        </button>
+        </NavLink>
       </div>
     </div>
   );

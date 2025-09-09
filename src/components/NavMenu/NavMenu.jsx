@@ -11,7 +11,10 @@ const NavigationMenu = () => {
       : css.navItem;
   };
   return (
-    <nav className={css.cont}>
+    <nav className={css.container}>
+      <NavLink to="/" className={css.logo}>
+        Travel<span>Trucks</span>
+      </NavLink>
       <ul className={css.navList}>
         <li className={css.navItem}>
           <NavLink to="/" className={css.navItem}>
@@ -21,11 +24,6 @@ const NavigationMenu = () => {
         <li className={css.navItem}>
           <NavLink to="/catalog" className={`${getLocation('/catalog')}`}>
             Catalog
-          </NavLink>
-        </li>
-        <li className={css.navItem}>
-          <NavLink to="/favorites" className={`${getLocation('/favorites')}`}>
-            Favorites
           </NavLink>
         </li>
       </ul>

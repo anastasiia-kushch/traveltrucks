@@ -107,7 +107,7 @@
   text-transform: capitalize;
 }
 
-.button {
+.showMoreBtn {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.5;
@@ -121,7 +121,7 @@
   font-size: 16px;
 }
 
-.button:hover,
-.button:focus {
+.showMoreBtn:hover,
+.showMoreBtn:focus {
   background-color: var(--dark-red);
 }

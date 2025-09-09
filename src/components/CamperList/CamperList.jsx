@@ -10,26 +10,25 @@ import {
 import Filters from '../Filters/Filters.jsx';
 import { getCampers } from '../../redux/campers/operations.js';
 import Loader from '../Loader/Loader.jsx';
-import ModalWindow from '../ModalWindow/ModalWindow.jsx';
+import campers from '../../mocked-data.json';
 
 export default function CamperList() {
-  const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
+  // const dispatch = useDispatch();
+  // const campers = useSelector(selectCampers);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
 
   const [visibleCampers, setVisibleCampers] = useState(4);
   const [filteredCampers, setFilteredCampers] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCamper, setSelectedCamper] = useState(null);
 
-  useEffect(() => {
-    dispatch(getCampers());
-  }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(getCampers());
+  // }, [dispatch]);
 
   useEffect(() => {
     setFilteredCampers(campers);
-  }, [campers]);
+  }, []);
 
   const handleSearch = (query) => {
     const filtered = filteredCampers.filter((camper) =>
@@ -43,16 +42,6 @@ export default function CamperList() {
     setVisibleCampers((prevCount) => prevCount + 4);
   };
 
-  const openModal = (camper) => {
-    setSelectedCamper(camper);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCamper(null);
-  };
-
   if (isError) {
     return <div>Error loading campers...</div>;
   }
@@ -63,16 +52,11 @@ export default function CamperList() {
       <Filters onSubmit={handleSearch} />
       <div className={css.cont}>
         <ul className={css.listCont}>
-          {filteredCampers
-            .slice(0, visibleCampers)
-            .map((camper) => (
-              <li key={camper._id}>
-                <CamperItem
-                  data={camper}
-                  onShowMore={() => openModal(camper)}
-                />
-              </li>
-            ))}
+          {filteredCampers.slice(0, visibleCampers).map((camper) => (
+            <li key={camper._id}>
+              <CamperItem data={camper} />
+            </li>
+          ))}
         </ul>
         {visibleCampers < filteredCampers.length && (
           <button className={css.loadMoreBtn} onClick={handleLoadMore}>
@@ -80,11 +64,7 @@ export default function CamperList() {
           </button>
         )}
       </div>
-      <ModalWindow
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        data={selectedCamper}
-      />
+      
     </div>
   );
 }

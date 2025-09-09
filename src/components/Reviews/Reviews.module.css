@@ -1,7 +1,10 @@
 .mainCont {
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 24px;
+  grid-template-columns: repeat(2, 630px);
+  gap: 44px;
+  color: #101828;
+  justify-content: center;
+  margin-top: 44px;
 }
 
 .reviewsCont {

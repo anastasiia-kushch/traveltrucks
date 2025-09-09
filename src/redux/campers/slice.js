@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCampers } from './operations.js';
+import data from '../../mocked-data.json';
+// import { getCampers } from './operations.js';
 
 export const initialStateCampers = {
-  campers: [],
+  campers: data,
   isLoading: false,
   isError: false,
   favoriteCampers: [],
@@ -40,21 +41,21 @@ const campersSlice = createSlice({
     },
   },
 
-  extraReducers: (builder) => {
-    builder
-      .addCase(getCampers.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-      })
-      .addCase(getCampers.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.campers = action.payload;
-      })
-      .addCase(getCampers.rejected, (state) => {
-        state.isLoading = false;
-        state.isError = true;
-      });
-  },
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(getCampers.pending, (state) => {
+  //       state.isLoading = true;
+  //       state.isError = false;
+  //     })
+  //     .addCase(getCampers.fulfilled, (state, action) => {
+  //       state.isLoading = false;
+  //       state.campers = action.payload;
+  //     })
+  //     .addCase(getCampers.rejected, (state) => {
+  //       state.isLoading = false;
+  //       state.isError = true;
+  //     });
+  // },
 });
 
 export const campersReducer = campersSlice.reducer;

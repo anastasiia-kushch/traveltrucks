@@ -8,29 +8,26 @@ const HomePage = lazy(() => import('../src/pages/HomePage/HomePage.jsx'));
 const CatalogPage = lazy(() =>
   import('../src/pages/CatalogPage/CatalogPage.jsx')
 );
-const CamperPage = lazy(() =>
-  import('../src/pages/CamperPage/CamperPage.jsx')
-);
+const CamperPage = lazy(() => import('../src/pages/CamperPage/CamperPage.jsx'));
 const NotFoundPage = lazy(() =>
   import('../src/pages/NotFoundPage/NotFoundPage.jsx')
 );
 
 function App() {
   return (
-    <div>
+    <Layout>
       <Toaster />
-      <Suspense fallback={<div>LOADING...</div>}>
+
+      <Suspense fallback="">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route element={<Layout />}>
-            <Route path="/catalog" element={<CatalogPage />} />
-            <Route path="/catalog/:id" element={<CamperPage />} />
-            <Route path="/favorites" element={<FavouritesPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog/:id" element={<CamperPage />} />
+          <Route path="/favorites" element={<FavouritesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-    </div>
+    </Layout>
   );
 }
 

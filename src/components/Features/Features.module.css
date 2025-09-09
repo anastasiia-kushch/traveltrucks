@@ -1,17 +1,23 @@
 .mainCont {
   display: grid;
-  grid-template-columns: 430px 448px;
-  gap: 24px;
+  grid-template-columns: repeat(2, 630px);
+  gap: 44px;
+  color: #101828;
+  justify-content: center;
+  margin-top: 44px;
 }
 
 .infoCont {
+  border-radius: 10px;
+  background: #f7f7f7;
+  padding: 44px 52px;
 }
 
 .featuresList {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
   margin-bottom: 44px;
 }
 
@@ -37,7 +43,7 @@
 .hr {
   border: 0;
   border-top: 2px solid rgba(16, 24, 40, 0.1);
-  width: 430px;
+  width: 100%;
   margin-left: 0;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -46,7 +52,7 @@
 .detailsList {
   list-style-type: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   display: flex;
   flex-direction: column;

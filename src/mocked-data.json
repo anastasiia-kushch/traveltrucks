@@ -1,0 +1,259 @@
+[
+  {
+    "_id": "1",
+    "gallery": [
+      { "thumb": "camper1-thumb.jpg", "original": "camper1.jpg" },
+      { "thumb": "camper1b-thumb.jpg", "original": "camper1b.jpg" }
+    ],
+    "name": "Camper Van Classic",
+    "price": "$100/day",
+    "rating": 4.5,
+    "location": "Warsaw, Poland",
+    "description": "Compact camper van with everything you need for a weekend trip.",
+    "adults": 4,
+    "transmission": "Manual",
+    "engine": "Diesel",
+    "details": {
+      "airConditioner": 1,
+      "kitchen": true,
+      "beds": 2,
+      "CD": true,
+      "radio": true,
+      "hob": 2
+    },
+    "form": "panelTruck",
+    "length": "5.9m",
+    "width": "2.3m",
+    "height": "2.8m",
+    "tank": "120l",
+    "reviews": [
+      {
+        "reviewer_name": "Anna Kowalska",
+        "reviewer_rating": 4.5,
+        "comment": "Very cozy camper, ideal for short trips."
+      },
+      {
+        "reviewer_name": "Mark Johnson",
+        "reviewer_rating": 4.0,
+        "comment": "Good experience, but the engine was a bit noisy."
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "gallery": [{ "thumb": "camper2-thumb.jpg", "original": "camper2.jpg" }],
+    "name": "Family Camper XL",
+    "price": "$150/day",
+    "rating": 4.8,
+    "location": "Berlin, Germany",
+    "description": "Spacious family camper with kitchen and large water tank.",
+    "adults": 6,
+    "transmission": "Automatic",
+    "engine": "Diesel",
+    "details": {
+      "airConditioner": 2,
+      "kitchen": true,
+      "beds": 4,
+      "CD": false,
+      "radio": true,
+      "hob": 3
+    },
+    "form": "alcove",
+    "length": "7.2m",
+    "width": "2.4m",
+    "height": "3.2m",
+    "tank": "180l",
+    "reviews": [
+      {
+        "reviewer_name": "Laura Schmidt",
+        "reviewer_rating": 5,
+        "comment": "Perfect for our family holiday, kids loved it!"
+      },
+      {
+        "reviewer_name": "Thomas Müller",
+        "reviewer_rating": 4.5,
+        "comment": "Spacious and comfortable, but fuel consumption is high."
+      }
+    ]
+  },
+  {
+    "_id": "3",
+    "gallery": [{ "thumb": "camper3-thumb.jpg", "original": "camper3.jpg" }],
+    "name": "Luxury Camper Pro",
+    "price": "$200/day",
+    "rating": 5,
+    "location": "Kraków, Poland",
+    "description": "Luxury camper with all amenities including AC, kitchen, and large beds.",
+    "adults": 4,
+    "transmission": "Automatic",
+    "engine": "Petrol",
+    "details": {
+      "airConditioner": 2,
+      "kitchen": true,
+      "beds": 3,
+      "CD": true,
+      "radio": true,
+      "hob": 4
+    },
+    "form": "fullyIntegrated",
+    "length": "7.8m",
+    "width": "2.5m",
+    "height": "3.1m",
+    "tank": "200l",
+    "reviews": [
+      {
+        "reviewer_name": "Piotr Nowak",
+        "reviewer_rating": 5,
+        "comment": "Amazing luxury experience, worth every penny!"
+      },
+      {
+        "reviewer_name": "Olga Petrova",
+        "reviewer_rating": 4.5,
+        "comment": "Super comfortable, though parking can be tricky."
+      }
+    ]
+  },
+  {
+    "_id": "4",
+    "gallery": [{ "thumb": "camper4-thumb.jpg", "original": "camper4.jpg" }],
+    "name": "Budget Camper",
+    "price": "$70/day",
+    "rating": 3.9,
+    "location": "Prague, Czech Republic",
+    "description": "Affordable camper for short trips, basic equipment included.",
+    "adults": 2,
+    "transmission": "Manual",
+    "engine": "Diesel",
+    "details": {
+      "airConditioner": 0,
+      "kitchen": false,
+      "beds": 1,
+      "CD": false,
+      "radio": true,
+      "hob": 1
+    },
+    "form": "van",
+    "length": "4.8m",
+    "width": "2.0m",
+    "height": "2.4m",
+    "tank": "80l",
+    "reviews": [
+      {
+        "reviewer_name": "Jan Novak",
+        "reviewer_rating": 3.5,
+        "comment": "Basic but does the job for a weekend getaway."
+      }
+    ]
+  },
+  {
+    "_id": "5",
+    "gallery": [{ "thumb": "camper5-thumb.jpg", "original": "camper5.jpg" }],
+    "name": "Adventure Camper",
+    "price": "$130/day",
+    "rating": 4.6,
+    "location": "Vienna, Austria",
+    "description": "Perfect camper for adventurous road trips in the mountains.",
+    "adults": 4,
+    "transmission": "Manual",
+    "engine": "Diesel",
+    "details": {
+      "airConditioner": 1,
+      "kitchen": true,
+      "beds": 2,
+      "CD": true,
+      "radio": true,
+      "hob": 2
+    },
+    "form": "semiIntegrated",
+    "length": "6.5m",
+    "width": "2.3m",
+    "height": "2.9m",
+    "tank": "140l",
+    "reviews": [
+      {
+        "reviewer_name": "Sophie Bauer",
+        "reviewer_rating": 4.5,
+        "comment": "Great for mountain trips, handles well."
+      },
+      {
+        "reviewer_name": "Lukas Steiner",
+        "reviewer_rating": 4.0,
+        "comment": "Good camper, but could use more storage space."
+      }
+    ]
+  },
+  {
+    "_id": "6",
+    "gallery": [{ "thumb": "camper6-thumb.jpg", "original": "camper6.jpg" }],
+    "name": "Eco Camper",
+    "price": "$120/day",
+    "rating": 4.7,
+    "location": "Paris, France",
+    "description": "Eco-friendly camper with solar panels and electric engine.",
+    "adults": 3,
+    "transmission": "Automatic",
+    "engine": "Electric",
+    "details": {
+      "airConditioner": 1,
+      "kitchen": true,
+      "beds": 2,
+      "CD": false,
+      "radio": true,
+      "hob": 1
+    },
+    "form": "van",
+    "length": "5.5m",
+    "width": "2.2m",
+    "height": "2.6m",
+    "tank": "100l",
+    "reviews": [
+      {
+        "reviewer_name": "Claire Dupont",
+        "reviewer_rating": 5,
+        "comment": "Loved the eco features and solar panels!"
+      },
+      {
+        "reviewer_name": "Antoine Bernard",
+        "reviewer_rating": 4.5,
+        "comment": "Drives smoothly, charging stations are sometimes far apart."
+      }
+    ]
+  },
+  {
+    "_id": "7",
+    "gallery": [{ "thumb": "camper7-thumb.jpg", "original": "camper7.jpg" }],
+    "name": "Couple Camper",
+    "price": "$90/day",
+    "rating": 4.2,
+    "location": "Rome, Italy",
+    "description": "Compact and cozy camper perfect for couples.",
+    "adults": 2,
+    "transmission": "Manual",
+    "engine": "Petrol",
+    "details": {
+      "airConditioner": 1,
+      "kitchen": true,
+      "beds": 1,
+      "CD": false,
+      "radio": true,
+      "hob": 1
+    },
+    "form": "alcove",
+    "length": "5.2m",
+    "width": "2.1m",
+    "height": "2.7m",
+    "tank": "90l",
+    "reviews": [
+      {
+        "reviewer_name": "Giulia Rossi",
+        "reviewer_rating": 4.0,
+        "comment": "Small but very comfortable for two people."
+      },
+      {
+        "reviewer_name": "Marco Bianchi",
+        "reviewer_rating": 4.5,
+        "comment": "Romantic little camper, great for weekend trips."
+      }
+    ]
+  }
+]

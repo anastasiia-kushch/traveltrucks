@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { Icon } from '../Icons/Icons';
 import css from './Filters.module.css';
 import clsx from 'clsx';
-import toast from 'react-hot-toast';
 
 const equipment = [
   { name: 'ac', label: 'AC', icon: <Icon id="icon-ac" /> },
@@ -72,12 +71,12 @@ export default function Filters({ onSubmit }) {
       validateOnChange={false}
     >
       {({ values }) => (
-        <Form className={css.formCont}>
-          <div>
+        <Form>
+          <div className={css.locationContainer}>
             <label htmlFor="location" className={css.label}>
               Location
             </label>
-            <div className={css.locationCont}>
+            <div className={css.locationInputContainer}>
               <div className={css.locationIcon}>
                 {locationSelected ? (
                   <Icon
@@ -107,30 +106,34 @@ export default function Filters({ onSubmit }) {
               />
             </div>
           </div>
-          <div className={css.filtersCont}>
+          <div className={css.filtersContainer}>
             <h2 className={css.filtersTitle}>Filters</h2>
-            <h3>Vehicle equipment</h3>
-            <hr className={css.hr} />
-            <div className={css.equipmentList}>
-              {equipment.map((filter) => (
-                <label
-                  key={filter.name}
-                  className={clsx(css.item, {
-                    [css.checkedItem]: values.filters[filter.name],
-                  })}
-                >
-                  <Field
-                    type="checkbox"
-                    name={`filters.${filter.name}`}
-                    className={css.hiddenCheckbox}
-                  />
-                  <span className={css.icon}>{filter.icon}</span>
-                  {filter.label}
-                </label>
-              ))}
+            <div className={css.filterType}>
+              <div>
+                <h3>Vehicle equipment</h3>
+                <hr className={css.hr} />
+              </div>
+              <div className={css.equipmentList}>
+                {equipment.map((filter) => (
+                  <label
+                    key={filter.name}
+                    className={clsx(css.item, {
+                      [css.checkedItem]: values.filters[filter.name],
+                    })}
+                  >
+                    <Field
+                      type="checkbox"
+                      name={`filters.${filter.name}`}
+                      className={css.hiddenCheckbox}
+                    />
+                    <span className={css.icon}>{filter.icon}</span>
+                    {filter.label}
+                  </label>
+                ))}
+              </div>
             </div>
 
-            <div className={css.filtersCont}>
+            <div className={css.filterType}>
               <h3>Vehicle type</h3>
               <hr className={css.hr} />
               <div className={css.typeList}>

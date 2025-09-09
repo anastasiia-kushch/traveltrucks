@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import css from './ModalDetails.module.css';
 import clsx from 'clsx';
 import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
 import { Icon } from '../Icons/Icons';
+import css from './CamperItemDetails.module.css';
 
-export default function ModalDetails({ data }) {
+export default function CamperItemDetails({ data }) {
   const [active, setActive] = useState('features');
 
   const handleClick = (component) => {
@@ -25,7 +25,7 @@ export default function ModalDetails({ data }) {
   if (!data) return <p>No data</p>;
 
   return (
-    <div>
+    <div className={css.container}>
       <div className={css.content}>
         <p className={css.title}>{name}</p>
         <div className={css.secondSec}>
@@ -51,18 +51,14 @@ export default function ModalDetails({ data }) {
             <p>{location}</p>
           </div>
         </div>
-        <p className={css.title}>&#8364;{price}.00</p>
+        <p className={css.price}>&#8364;{price}.00</p>
       </div>
       <ul className={css.gallery}>
-        {gallery.length === 0 ? (
-          <p>No images</p>
-        ) : (
-          <img
-            src={gallery[0].original}
-            className={css.galleryItem}
-            alt="camper"
-          />
-        )}
+        {gallery.map((img, index) => (
+          <li key={index}>
+            <img src={img.thumb} className={css.galleryItem} alt="camper" />
+          </li>
+        ))}
       </ul>
 
       <p className={css.description}>{description}</p>

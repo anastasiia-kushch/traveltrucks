@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './FavoritesPage.module.css';
 import { selectFavoriteCampers } from '../../redux/campers/selectors';
 import { Icon } from '../../components/Icons/Icons.jsx';
-import ModalWindow from '../../components/ModalWindow/ModalWindow.jsx';
 import { useState } from 'react';
 import { deleteFavorite } from '../../redux/campers/slice';
 
@@ -10,18 +9,7 @@ export default function FavouritesPage() {
   const favoriteCampers = useSelector(selectFavoriteCampers);
   const dispatch = useDispatch();
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCamper, setSelectedCamper] = useState(null);
-
-  const openModal = (camper) => {
-    setSelectedCamper(camper);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCamper(null);
-  };
 
   const handleFavoriteClick = (camper) => {
     dispatch(deleteFavorite(camper._id));
@@ -29,7 +17,7 @@ export default function FavouritesPage() {
 
   return (
     <div className={css.mainCont}>
-      <ul className={css.favList}>
+      {/* <ul className={css.favList}>
         {favoriteCampers.map((camper) => (
           <li key={camper._id} className={css.favItem}>
             <img src={camper.gallery[0]} alt="camper" className={css.img} />
@@ -76,12 +64,7 @@ export default function FavouritesPage() {
             </div>
           </li>
         ))}
-      </ul>
-      <ModalWindow
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        data={selectedCamper}
-      />
+      </ul> */}
     </div>
   );
 }

@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { addBookings } from '../../redux/booking/operations';
 import toast from 'react-hot-toast';
 import css from './BookForm.module.css';
 
@@ -26,17 +25,8 @@ export default function BookForm() {
     mode: 'onBlur',
   });
 
-  const dispatch = useDispatch();
-
-  const onSubmit = async (data) => {
+  const onSubmit = () => {
     try {
-      console.log('Form data before processing:', data);
-
-      data.name = data.name.trim();
-      data.email = data.email.trim();
-      data.comment = data.comment.trim();
-      data.bookingDate = new Date(data.bookingDate).toISOString();
-      await dispatch(addBookings(data)).unwrap();
       toast.success('Reservation completed!🥳');
       reset();
     } catch (error) {

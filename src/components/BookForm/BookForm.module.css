@@ -1,8 +1,7 @@
 .cont {
   box-sizing: border-box;
-  width: 448px;
-  height: 532px;
-  padding: 24px;
+  width: 100%;
+  padding: 44px 57px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
   display: flex;
@@ -43,6 +42,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
+  width: 527px;
 }
 .comment {
   font-family: inherit;
@@ -52,7 +52,7 @@
   border-radius: 10px;
   background-color: #f7f7f7;
   color: var(--dark-blue);
-  width: 100%;
+  width: 527px;
   height: 114px;
   font-size: 16px;
   font-weight: 400;
@@ -74,6 +74,8 @@
   background-color: var(--red);
   color: var(--white);
   border: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button:hover,
