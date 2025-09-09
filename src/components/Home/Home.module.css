@@ -1,0 +1,46 @@
+.container {
+  box-sizing: border-box;
+
+  height: 100vh;
+  width: 100vw;
+  padding-top: 280px;
+  padding-left: 48px;
+
+  color: var(--white);
+  text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  
+  background-image: url('/src/public/images/home-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; 
+}
+
+.title {
+  font-size: 46px;
+}
+
+.benefits {
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+  margin-left: 8px;
+}
+
+.benefits li {
+  list-style-type: circle;
+}
+
+.spanCamp {
+  color: #fba06f;
+}
+
+.span {
+  color: #a5f2f1;
+}
