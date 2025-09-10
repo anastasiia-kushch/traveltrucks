@@ -2,8 +2,14 @@
   {
     "_id": "1",
     "gallery": [
-      { "thumb": "camper1-thumb.jpg", "original": "camper1.jpg" },
-      { "thumb": "camper1b-thumb.jpg", "original": "camper1b.jpg" }
+      {
+        "thumb": "camper1-thumb.jpg",
+        "original": "camper1.jpg"
+      },
+      {
+        "thumb": "camper1b-thumb.jpg",
+        "original": "camper1b.jpg"
+      }
     ],
     "name": "Camper Van Classic",
     "price": "$100/day",
@@ -19,9 +25,12 @@
       "beds": 2,
       "CD": true,
       "radio": true,
-      "hob": 2
+      "hob": 2,
+      "tv": false,
+      "wc": false
     },
-    "form": "panelTruck",
+    "form": "van",
+    "vehicleType": "van",
     "length": "5.9m",
     "width": "2.3m",
     "height": "2.8m",
@@ -37,11 +46,21 @@
         "reviewer_rating": 4.0,
         "comment": "Good experience, but the engine was a bit noisy."
       }
-    ]
+    ],
+    "ac": true,
+    "automatic": false,
+    "kitchen": true,
+    "tv": false,
+    "wc": false
   },
   {
     "_id": "2",
-    "gallery": [{ "thumb": "camper2-thumb.jpg", "original": "camper2.jpg" }],
+    "gallery": [
+      {
+        "thumb": "camper2-thumb.jpg",
+        "original": "camper2.jpg"
+      }
+    ],
     "name": "Family Camper XL",
     "price": "$150/day",
     "rating": 4.8,
@@ -56,9 +75,12 @@
       "beds": 4,
       "CD": false,
       "radio": true,
-      "hob": 3
+      "hob": 3,
+      "tv": false,
+      "wc": false
     },
     "form": "alcove",
+    "vehicleType": "alcove",
     "length": "7.2m",
     "width": "2.4m",
     "height": "3.2m",
@@ -70,19 +92,29 @@
         "comment": "Perfect for our family holiday, kids loved it!"
       },
       {
-        "reviewer_name": "Thomas Müller",
+        "reviewer_name": "Thomas M\u00fcller",
         "reviewer_rating": 4.5,
         "comment": "Spacious and comfortable, but fuel consumption is high."
       }
-    ]
+    ],
+    "ac": true,
+    "automatic": true,
+    "kitchen": true,
+    "tv": false,
+    "wc": false
   },
   {
     "_id": "3",
-    "gallery": [{ "thumb": "camper3-thumb.jpg", "original": "camper3.jpg" }],
+    "gallery": [
+      {
+        "thumb": "camper3-thumb.jpg",
+        "original": "camper3.jpg"
+      }
+    ],
     "name": "Luxury Camper Pro",
     "price": "$200/day",
     "rating": 5,
-    "location": "Kraków, Poland",
+    "location": "Krak\u00f3w, Poland",
     "description": "Luxury camper with all amenities including AC, kitchen, and large beds.",
     "adults": 4,
     "transmission": "Automatic",
@@ -93,9 +125,12 @@
       "beds": 3,
       "CD": true,
       "radio": true,
-      "hob": 4
+      "hob": 4,
+      "tv": false,
+      "wc": false
     },
-    "form": "fullyIntegrated",
+    "form": "fully",
+    "vehicleType": "fully",
     "length": "7.8m",
     "width": "2.5m",
     "height": "3.1m",
@@ -111,11 +146,21 @@
         "reviewer_rating": 4.5,
         "comment": "Super comfortable, though parking can be tricky."
       }
-    ]
+    ],
+    "ac": true,
+    "automatic": true,
+    "kitchen": true,
+    "tv": false,
+    "wc": false
   },
   {
     "_id": "4",
-    "gallery": [{ "thumb": "camper4-thumb.jpg", "original": "camper4.jpg" }],
+    "gallery": [
+      {
+        "thumb": "camper4-thumb.jpg",
+        "original": "camper4.jpg"
+      }
+    ],
     "name": "Budget Camper",
     "price": "$70/day",
     "rating": 3.9,
@@ -130,9 +175,12 @@
       "beds": 1,
       "CD": false,
       "radio": true,
-      "hob": 1
+      "hob": 1,
+      "tv": false,
+      "wc": false
     },
     "form": "van",
+    "vehicleType": "van",
     "length": "4.8m",
     "width": "2.0m",
     "height": "2.4m",
@@ -143,11 +191,21 @@
         "reviewer_rating": 3.5,
         "comment": "Basic but does the job for a weekend getaway."
       }
-    ]
+    ],
+    "ac": false,
+    "automatic": false,
+    "kitchen": false,
+    "tv": false,
+    "wc": false
   },
   {
     "_id": "5",
-    "gallery": [{ "thumb": "camper5-thumb.jpg", "original": "camper5.jpg" }],
+    "gallery": [
+      {
+        "thumb": "camper5-thumb.jpg",
+        "original": "camper5.jpg"
+      }
+    ],
     "name": "Adventure Camper",
     "price": "$130/day",
     "rating": 4.6,
@@ -162,9 +220,12 @@
       "beds": 2,
       "CD": true,
       "radio": true,
-      "hob": 2
+      "hob": 2,
+      "tv": false,
+      "wc": false
     },
-    "form": "semiIntegrated",
+    "form": "van",
+    "vehicleType": "van",
     "length": "6.5m",
     "width": "2.3m",
     "height": "2.9m",
@@ -180,11 +241,21 @@
         "reviewer_rating": 4.0,
         "comment": "Good camper, but could use more storage space."
       }
-    ]
+    ],
+    "ac": true,
+    "automatic": false,
+    "kitchen": true,
+    "tv": false,
+    "wc": false
   },
   {
     "_id": "6",
-    "gallery": [{ "thumb": "camper6-thumb.jpg", "original": "camper6.jpg" }],
+    "gallery": [
+      {
+        "thumb": "camper6-thumb.jpg",
+        "original": "camper6.jpg"
+      }
+    ],
     "name": "Eco Camper",
     "price": "$120/day",
     "rating": 4.7,
@@ -199,9 +270,12 @@
       "beds": 2,
       "CD": false,
       "radio": true,
-      "hob": 1
+      "hob": 1,
+      "tv": false,
+      "wc": false
     },
     "form": "van",
+    "vehicleType": "van",
     "length": "5.5m",
     "width": "2.2m",
     "height": "2.6m",
@@ -217,11 +291,21 @@
         "reviewer_rating": 4.5,
         "comment": "Drives smoothly, charging stations are sometimes far apart."
       }
-    ]
+    ],
+    "ac": true,
+    "automatic": true,
+    "kitchen": true,
+    "tv": false,
+    "wc": false
   },
   {
     "_id": "7",
-    "gallery": [{ "thumb": "camper7-thumb.jpg", "original": "camper7.jpg" }],
+    "gallery": [
+      {
+        "thumb": "camper7-thumb.jpg",
+        "original": "camper7.jpg"
+      }
+    ],
     "name": "Couple Camper",
     "price": "$90/day",
     "rating": 4.2,
@@ -236,9 +320,12 @@
       "beds": 1,
       "CD": false,
       "radio": true,
-      "hob": 1
+      "hob": 1,
+      "tv": false,
+      "wc": false
     },
     "form": "alcove",
+    "vehicleType": "alcove",
     "length": "5.2m",
     "width": "2.1m",
     "height": "2.7m",
@@ -254,6 +341,11 @@
         "reviewer_rating": 4.5,
         "comment": "Romantic little camper, great for weekend trips."
       }
-    ]
+    ],
+    "ac": true,
+    "automatic": false,
+    "kitchen": true,
+    "tv": false,
+    "wc": false
   }
 ]

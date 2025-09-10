@@ -1,6 +1,6 @@
 .mainCont {
   display: grid;
-  grid-template-columns: repeat(2, 630px);
+  grid-template-columns: repeat(2, 1fr);
   gap: 44px;
   color: #101828;
   justify-content: center;

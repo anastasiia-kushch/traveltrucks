@@ -74,12 +74,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 525px;
   margin-bottom: 24px;
 }
 
 .features {
-  width: 526px;
   height: 96px;
   background-color: rgba(16, 24, 40, 0.2);
   margin-bottom: 24px;
@@ -98,7 +96,6 @@
   background-color: #f2f4f7;
   border: none;
   border-radius: 100px;
-  width: max-content;
   display: flex;
   gap: 8px;
 }
@@ -113,12 +110,12 @@
   line-height: 1.5;
   letter-spacing: -0.005em;
   border-radius: 200px;
-  width: max-content;
   padding: 16px 40px;
   background-color: var(--red);
   color: var(--white);
   border: none;
   font-size: 16px;
+  width: max-content;
 }
 
 .showMoreBtn:hover,

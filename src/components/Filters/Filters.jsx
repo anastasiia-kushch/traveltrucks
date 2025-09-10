@@ -1,33 +1,36 @@
-import { Form, Formik, Field } from 'formik';
-import { useState } from 'react';
-import * as Yup from 'yup';
-import { Icon } from '../Icons/Icons';
-import css from './Filters.module.css';
-import clsx from 'clsx';
+import { Form, Formik, Field } from "formik";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setFilters } from "../../redux/campers/slice";
+import * as Yup from "yup";
+import { Icon } from "../Icons/Icons";
+import css from "./Filters.module.css";
+import clsx from "clsx";
 
 const equipment = [
-  { name: 'ac', label: 'AC', icon: <Icon id="icon-ac" /> },
-  { name: 'automatic', label: 'Automatic', icon: <Icon id="icon-automatic" /> },
-  { name: 'kitchen', label: 'Kitchen', icon: <Icon id="icon-kitchen" /> },
-  { name: 'tv', label: 'TV', icon: <Icon id="icon-tv" /> },
-  { name: 'wc', label: 'WC', icon: <Icon id="icon-wc" /> },
+  { name: "ac", label: "AC", icon: <Icon id="icon-ac" /> },
+  { name: "automatic", label: "Automatic", icon: <Icon id="icon-automatic" /> },
+  { name: "kitchen", label: "Kitchen", icon: <Icon id="icon-kitchen" /> },
+  { name: "tv", label: "TV", icon: <Icon id="icon-tv" /> },
+  { name: "wc", label: "WC", icon: <Icon id="icon-wc" /> },
 ];
 
 const type = [
-  { name: 'van', label: 'Van', icon: <Icon id="icon-van" /> },
-  { name: 'fully', label: 'Fully integrated', icon: <Icon id="icon-fully" /> },
-  { name: 'alcove', label: 'Alcove', icon: <Icon id="icon-alcove" /> },
+  { name: "van", label: "Van", icon: <Icon id="icon-van" /> },
+  { name: "fully", label: "Fully integrated", icon: <Icon id="icon-fully" /> },
+  { name: "alcove", label: "Alcove", icon: <Icon id="icon-alcove" /> },
 ];
 
 export default function Filters({ onSubmit }) {
   const [locationSelected, setLocationSelected] = useState(false);
+  const dispatch = useDispatch();
 
   const handleLocationChange = () => {
     setLocationSelected(true);
   };
 
   const initialValues = {
-    location: '',
+    location: "",
     filters: {
       ac: false,
       automatic: false,
@@ -35,11 +38,7 @@ export default function Filters({ onSubmit }) {
       tv: false,
       wc: false,
     },
-    vehicleType: {
-      van: false,
-      fully: false,
-      alcove: false,
-    },
+    vehicleType: "",
   };
 
   const validationSchema = Yup.object({
@@ -51,15 +50,12 @@ export default function Filters({ onSubmit }) {
       tv: Yup.boolean(),
       wc: Yup.boolean(),
     }),
-    vehicleType: Yup.object().shape({
-      van: Yup.boolean(),
-      fully: Yup.boolean(),
-      alcove: Yup.boolean(),
-    }),
+    vehicleType: Yup.string(),
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    onSubmit(values);
+    dispatch(setFilters(values));
+    if (onSubmit) onSubmit(values);
     resetForm();
   };
 
@@ -81,18 +77,18 @@ export default function Filters({ onSubmit }) {
                 {locationSelected ? (
                   <Icon
                     id="icon-location"
-                    stroke={'#101828'}
-                    fill={'none'}
-                    width={'16'}
-                    height={'16'}
+                    stroke={"#101828"}
+                    fill={"none"}
+                    width={"16"}
+                    height={"16"}
                   />
                 ) : (
                   <Icon
                     id="icon-location"
-                    stroke={'rgba(16, 24, 40, 0.6)'}
-                    fill={'none'}
-                    width={'16'}
-                    height={'16'}
+                    stroke={"rgba(16, 24, 40, 0.6)"}
+                    fill={"none"}
+                    width={"16"}
+                    height={"16"}
                   />
                 )}
               </div>
@@ -141,12 +137,13 @@ export default function Filters({ onSubmit }) {
                   <label
                     key={filter.name}
                     className={clsx(css.item, {
-                      [css.checkedItem]: values.vehicleType[filter.name],
+                      [css.checkedItem]: values.vehicleType === filter.name,
                     })}
                   >
                     <Field
-                      type="checkbox"
-                      name={`vehicleType.${filter.name}`}
+                      type="radio"
+                      name="vehicleType"
+                      value={filter.name}
                       className={css.hiddenCheckbox}
                     />
                     <span className={css.icon}>{filter.icon}</span>

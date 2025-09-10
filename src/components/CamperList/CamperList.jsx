@@ -1,26 +1,24 @@
-import { useState, useEffect } from 'react';
-import CamperItem from '../CamperItem/CamperItem.jsx';
-import css from './CamperList.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from "react";
+import CamperItem from "../CamperItem/CamperItem.jsx";
+import css from "./CamperList.module.css";
+import { useDispatch, useSelector } from "react-redux";
 import {
   selectCampers,
   selectLoading,
   selectError,
-} from '../../redux/campers/selectors.js';
-import Filters from '../Filters/Filters.jsx';
-import { getCampers } from '../../redux/campers/operations.js';
-import Loader from '../Loader/Loader.jsx';
-import campers from '../../mocked-data.json';
+} from "../../redux/campers/selectors.js";
+import Filters from "../Filters/Filters.jsx";
+import { getCampers } from "../../redux/campers/operations.js";
+import Loader from "../Loader/Loader.jsx";
 
 export default function CamperList() {
-  // const dispatch = useDispatch();
-  // const campers = useSelector(selectCampers);
+  const dispatch = useDispatch();
+  const campers = useSelector(selectCampers);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
 
   const [visibleCampers, setVisibleCampers] = useState(4);
   const [filteredCampers, setFilteredCampers] = useState([]);
-
 
   // useEffect(() => {
   //   dispatch(getCampers());
@@ -31,9 +29,28 @@ export default function CamperList() {
   }, []);
 
   const handleSearch = (query) => {
-    const filtered = filteredCampers.filter((camper) =>
-      camper.location.toLowerCase().includes(query.location.toLowerCase())
-    );
+    setFilteredCampers([]);
+    const { location, vehicleType, filters } = query;
+    const filtered = campers.filter((camper) => {
+      const locationMatch = location
+        ? camper.location.toLowerCase().includes(location.toLowerCase())
+        : true;
+
+      let typeMatch = true;
+      if (vehicleType) {
+        typeMatch = camper.vehicleType === vehicleType;
+      }
+
+      let equipmentMatch = true;
+      if (filters) {
+        equipmentMatch = Object.entries(filters).every(([key, value]) => {
+          if (!value) return true;
+          return camper[key] === true;
+        });
+      }
+
+      return locationMatch && typeMatch && equipmentMatch;
+    });
     setFilteredCampers(filtered);
     setVisibleCampers(4);
   };
@@ -64,7 +81,6 @@ export default function CamperList() {
           </button>
         )}
       </div>
-      
     </div>
   );
 }
