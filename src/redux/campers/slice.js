@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import data from '../../mocked-data.json';
-// import { getCampers } from './operations.js';
+import { getCampers } from './operations.js';
 
 export const initialStateCampers = {
-  campers: data,
+  campers: [],
   isLoading: false,
   isError: false,
   favoriteCampers: [],
@@ -33,7 +32,7 @@ const campersSlice = createSlice({
     },
     deleteFavorite: (state, action) => {
       state.favoriteCampers = state.favoriteCampers.filter(
-        (camper) => camper._id !== action.payload
+        (camper) => camper.id !== action.payload
       );
     },
     setFilters: (state, action) => {
@@ -41,21 +40,21 @@ const campersSlice = createSlice({
     },
   },
 
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(getCampers.pending, (state) => {
-  //       state.isLoading = true;
-  //       state.isError = false;
-  //     })
-  //     .addCase(getCampers.fulfilled, (state, action) => {
-  //       state.isLoading = false;
-  //       state.campers = action.payload;
-  //     })
-  //     .addCase(getCampers.rejected, (state) => {
-  //       state.isLoading = false;
-  //       state.isError = true;
-  //     });
-  // },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCampers.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(getCampers.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.campers = action.payload;
+      })
+      .addCase(getCampers.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+      });
+  },
 });
 
 export const campersReducer = campersSlice.reducer;

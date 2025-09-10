@@ -20,13 +20,13 @@ export default function CamperList() {
   const [visibleCampers, setVisibleCampers] = useState(4);
   const [filteredCampers, setFilteredCampers] = useState([]);
 
-  // useEffect(() => {
-  //   dispatch(getCampers());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getCampers());
+  }, [dispatch]);
 
   useEffect(() => {
     setFilteredCampers(campers);
-  }, []);
+  }, [campers]);
 
   const handleSearch = (query) => {
     setFilteredCampers([]);

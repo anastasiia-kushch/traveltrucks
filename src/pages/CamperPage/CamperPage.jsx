@@ -6,7 +6,7 @@ import { selectCampers } from "../../redux/campers/selectors.js";
 export default function CamperPage() {
   const { id } = useParams();
   const campers = useSelector(selectCampers);
-  const camper = campers.find((c) => c._id === id);
+  const camper = campers.find((c) => c.id === id);
 
   return (
     <div>

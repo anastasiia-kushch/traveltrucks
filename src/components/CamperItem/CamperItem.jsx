@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 export default function CamperItem({ data, onShowMore }) {
   const {
-    _id,
+    id,
     gallery = [],
     name = "No name",
     price = "No price",
@@ -25,11 +25,11 @@ export default function CamperItem({ data, onShowMore }) {
   const dispatch = useDispatch();
   const favoriteCampers = useSelector(selectFavoriteCampers);
 
-  const isFavorite = favoriteCampers.some((camper) => camper._id === _id);
+  const isFavorite = favoriteCampers.some((camper) => camper.id === id);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
-      dispatch(deleteFavorite(_id));
+      dispatch(deleteFavorite(id));
     } else {
       dispatch(addFavorite(data));
     }
@@ -117,7 +117,7 @@ export default function CamperItem({ data, onShowMore }) {
             )}
           </ul>
         </div>
-        <NavLink to={`/catalog/${_id}`} className={css.showMoreBtn}>
+        <NavLink to={`/catalog/${id}`} className={css.showMoreBtn}>
           Show more
         </NavLink>
       </div>

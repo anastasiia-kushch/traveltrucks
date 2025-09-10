@@ -4,6 +4,7 @@
   border: 1px solid rgba(16, 24, 40, 0.2);
   display: flex;
   gap: 24px;
+  max-width: 888px;
 }
 
 .img {
@@ -15,8 +16,11 @@
 }
 
 .content {
+  box-sizing: border-box;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .firstSec {
